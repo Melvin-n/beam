@@ -1,0 +1,54 @@
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 4vh;
+    border: 2px solid white;
+    color: white;
+    background-color: slategrey;
+    width: 40%;
+}
+
+input {
+    margin-bottom: 5vh;
+    background-color: rgb(43, 49, 54);
+    color: white;
+    border-radius: 5px;
+    
+}
+
+#login-card, #signup-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+#auth-background {
+    width: 100vw;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#login-or-signup button {
+    border: 2px solid white;
+    background: none;
+    color: white;
+    font-size: 1.5em;
+    margin: 3vh 3vw;
+}
+
+#login-or-signup button:hover {
+    cursor: pointer;
+}
+
+.login-signup-title {
+    color: white;
+}
+
+
+
+

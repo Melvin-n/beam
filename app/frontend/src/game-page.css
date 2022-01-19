@@ -1,0 +1,26 @@
+#game-details-image {
+    width: 35vw;
+    height: 35vw;
+    border-radius: 15px;
+}
+
+#game-details-card {
+    padding: 5vw 8vw;
+}
+
+#game-description-paragraph {
+    width: 35vw;
+}
+
+#game-page-main {
+    display: flex;
+    flex-direction: row;
+}
+
+#game-purchase-card {
+    padding: 5vw 8vw;
+}
+
+#price-purchase-card {
+    font-size: 5em;
+}
