@@ -1,0 +1,22 @@
+#footer-container {
+    background-color: black;
+    color: white;
+    width: 100vw;
+    height: 18vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+}
+
+#footer-container h5{
+    font-size: 2.2em;
+    margin-top: 0.6em;
+    margin-bottom: 0.5em
+}
+
+#footer-container h6{
+    font-size: 0.8em;
+    margin-top: 0
+}
+
