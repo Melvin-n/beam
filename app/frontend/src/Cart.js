@@ -25,14 +25,12 @@ export default function Cart(props) {
 
     
     const checkout = () => {
+        console.log(gamesInCartPrice)
         axios.post('http://localhost:4000/checkout', {
-            gamesCheckout
+            gamesInCartPrice
         })
-        .then(res => {
-            if (res.ok) return res.json
-            .then(console.log(res))
-            .catch(e => console.log(e.error))
-        })
+        .then(res => window.location = res.data.url)
+        .catch(e => console.log(e.error))
     }
     
 

@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt')
 const jwt = require("jsonwebtoken")
 const { default: Stripe } = require("stripe")
 const saltRounds = 8
-const stripre = require('stripe')(process.env.PRIVATE_STRIPE_KEY)
+const stripe = require('stripe')(process.env.PRIVATE_STRIPE_KEY)
 require('dotenv').config()
 
 
@@ -156,15 +156,33 @@ const getUserCart = (req, res) => {
 }
 
 const checkout = async (req, res) => {
-    console.log((req.body))
-    // try {
-    //     const session = await stripe.checkout.sessions.create({
-
-    //     })
-    // }
-    // catch(e) {
-    //     res.status(500).json({error: e.message})
-    // }
+    const { gamesInCartPrice } = req.body   
+    console.log(gamesInCartPrice)
+    try {
+        console.log('try')
+        const session = await stripe.checkout.sessions.create({
+            payment_method_types: ['card'],
+            mode: 'payment',
+            line_items: gamesInCartPrice.map(item => {
+                return {
+                    price_data: {
+                        currency: 'nzd',
+                        product_data: {
+                            name: item[0]
+                        },
+                        unit_amount: (item[1] * 100).toFixed(0)
+                    },
+                    quantity : 1
+                }
+            }),
+            success_url: 'http://localhost:3000/cancel',
+            cancel_url: 'http://localhost:3000/paymentmade'
+        })
+        res.json(({url: session.url}))
+    }
+    catch(e) {
+        res.json({error: e.message})
+    }
     
 }
 
