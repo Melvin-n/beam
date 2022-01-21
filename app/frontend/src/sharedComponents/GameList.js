@@ -1,5 +1,8 @@
+//import dependencies
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
+
+//import css
 import './homepage.css'
 
 
@@ -13,7 +16,6 @@ export default function GameList() {
         axios.get('http://localhost:4000/games')
         .then(res => {
             setGames(res.data)
-            console.log(res.data)
             setIsLoaded(true)
         })
     }, [])

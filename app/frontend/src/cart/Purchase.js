@@ -1,15 +1,11 @@
-import React, { useState, useEffect } from 'react'
+//import dependencies
+import React from 'react'
 import axios from 'axios'
 
 export default function Purchase(props) {
 
-    const [inCart, setInCart] = useState(false)
 
-    useEffect(() => {
-        console.log(props.username)
-        console.log(props.user_id)
-    })
-    
+    //Adds an item to the users cart
     const handleClick = (game_id, username) => {
         axios.post('http://localhost:4000/add-to-cart', {game_id: game_id, username: username})
         .then(res => console.log(res))

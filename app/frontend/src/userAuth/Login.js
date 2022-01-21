@@ -8,6 +8,7 @@ export default function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
 
+    //send login data alerts response
     const handleSubmit = async(e) => {
 
         e.preventDefault()

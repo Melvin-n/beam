@@ -1,9 +1,14 @@
+//import dependencies
 import React, { useState } from 'react'
+
+//import components
 import Login from './Login'
 import Signup from './Signup'
+import Footer from '../sharedComponents/Footer'
+
+//import css
 import './user-auth.css'
-import Header from './Header'
-import Footer from './Footer'
+
 
 export default function UserAuth() {
 

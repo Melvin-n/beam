@@ -1,0 +1,17 @@
+.after-payment-title {
+    font-size: 15vh;
+}
+
+.after-payment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.after-payment-redirect {
+    font-size: 7vh;
+    border: 4px solid black;
+    text-decoration: none;
+    
+}

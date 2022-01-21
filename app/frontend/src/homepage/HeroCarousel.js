@@ -1,14 +1,9 @@
+//import dependencies
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
-import './homepage.css'
-
-//import images
-// import goldSilver from '../public/heroimages/goldsilver.jpg'
-// import gta3 from '../public/heroimages/gta3.jpg'
-// import sf2 from '../public/heroimages/sf2.jpg'
-// import tekken4 from '../public/heroimages/tekken4.jpg'
-
+//import css
+import '../css/homepage.css'
 
 
 export default function HeroCarousel() {
@@ -16,6 +11,7 @@ export default function HeroCarousel() {
     const [saleItems, setSaleItems] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
+    //get featured products
     useEffect(() => {
         axios.get('http://localhost:4000/api/sale')
         .then(res => {

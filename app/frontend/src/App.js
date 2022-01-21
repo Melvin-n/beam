@@ -1,16 +1,22 @@
-import './App.css';
-import Homepage from './Homepage';
-import Addgame from './Addgame';
-import './homepage.css';
+//import dependencies
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import GamePage from './GamePage';
-import UserAuth from './UserAuth';
 import React, { useState, useEffect } from 'react'
 import base64 from 'react-native-base64'
-import Header from './Header';
-import Cart from './Cart';
 
+//import components
+import Homepage from './homepage/Homepage';
+import Addgame from './products/Addgame';
+import GamePage from './products/GamePage';
+import UserAuth from './userAuth/UserAuth';
+import Header from './sharedComponents/Header';
+import Cart from './cart/Cart';
+import SuccessPayment from './userAuth/SuccessPayment';
+import CancelledPayment from './userAuth/CancelledPayment';
+import Footer from './sharedComponents/Footer';
 
+//import css
+import './css/App.css';
+import './css/homepage.css';
 
 
 export default function App() {
@@ -49,8 +55,11 @@ export default function App() {
                     <Route path='/game/:id' element={<GamePage username={decodedUsername} user_id={decodedUserID} />} />
                     <Route path='/login-signup' element={<UserAuth username={decodedUsername} user_id={decodedUserID} />} />
                     <Route path='/user/cart/:user_id' element={<Cart username={decodedUsername} user_id={decodedUserID} />} />
+                    <Route path='/payment-success' element={<SuccessPayment />} />
+                    <Route path='/payment-cancel' element={<CancelledPayment />} />
                 </Routes>
             </BrowserRouter>
+            <Footer />
         </div>
     )
 }

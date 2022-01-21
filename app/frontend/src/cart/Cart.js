@@ -1,38 +1,48 @@
+//import dependencies and css
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import './cart.css'
+import '../css/cart.css'
 
 export default function Cart(props) {
 
     const [gamesInCartPrice, setGamesInCartPrice] = useState([])
-    const [gamesCheckout, setgamesCheckout] = useState([])
     const [loaded, setLoaded] = useState(false)
     const [total, setTotal] = useState(0)
     
-    console.log(props.user_id)
+    //display the customers cart items and prices, also calculate and show total price
     useEffect(() => {
         if (props.user_id) {
-
         }
         axios.post(`http://localhost:4000/user/cart/${props.user_id}`)
         .then(res => res.data.map(game => (
             setGamesInCartPrice(gamesInCartPrice =>[...gamesInCartPrice, [game['title'], game['price']]]),
-            setgamesCheckout(gamesCheckout => [...gamesCheckout, game['title']]),
             setTotal(total => total + game['price'])
             )))  
         setLoaded(true)
     }, [props.user_id])
 
-    
+    //redirect customer to checkout
     const checkout = () => {
-        console.log(gamesInCartPrice)
         axios.post('http://localhost:4000/checkout', {
             gamesInCartPrice
         })
         .then(res => window.location = res.data.url)
         .catch(e => console.log(e.error))
     }
-    
+
+    //delete an item from the users cart then reload the page
+    const deleteItem = (gameTitle) => {
+        axios.delete('http://localhost:4000/delete-cart-item', { data: {
+            user_id: props.user_id,
+            title: gameTitle
+            }
+        })
+        .then(res => {
+            if (res.data.affectedRows !== 0) {
+                window.location.reload()
+            }
+        })
+    }   
 
     if (!loaded) {
         return ('')
@@ -49,7 +59,8 @@ export default function Cart(props) {
                 {gamesInCartPrice.map(game => (
                     <tr>
                     <td>{game[0]}</td>  
-                    <td>${game[1]}</td>
+                    <td>${game[1]}</td> 
+                    <button onClick={() => deleteItem(game[0])}>Delete</button>
                     </tr>
                 ))}
                 <tr id='total-row'>
@@ -59,7 +70,9 @@ export default function Cart(props) {
             </table>
             <div id='cart-page-buttons'>
                 <button className='cart-button' id='cart-checkout' onClick={checkout}>Checkout</button>
-                <button className='cart-button' id='cart-continue-shopping'>Continue shopping</button>
+                <button className='cart-button' id='cart-continue-shopping'
+                 onClick={() => window.location = 'http://localhost:3000/'}>Continue shopping
+                 </button>
             </div>
         </div>
     )

@@ -1,11 +1,15 @@
+//import dependencies
 import React, { useState, useEffect } from 'react'
-import Header from './Header.js'
-import axios from 'axios'
-import GameDetails from './GameDetails.js'
 import { useParams } from 'react-router-dom'
+import axios from 'axios'
+
+//import components
+import GameDetails from './GameDetails.js'
+import Purchase from './Purchase.js.js'
+
+//import css
 import './game-page.css'
-import Purchase from './Purchase.js'
-import Footer from './Footer.js'
+
 
 export default function GamePage(props) {
 
@@ -38,7 +42,6 @@ export default function GamePage(props) {
                 <GameDetails gameData={gameData}  />
                 <Purchase gameData={gameData} username={props.username} user_id={props.user_id}/>
             </div>
-            <Footer />
         </div>
     )
 }

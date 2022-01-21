@@ -24,8 +24,8 @@ export default function Header(props) {
             </ul>
             {props.username ?
             <div id='login-div'>
-            <a href={`http://localhost:3000/user/cart/${props.user_id}`}>
             <div>Logged in as {props.username.replace(/(^|\s)\S/g, letter => letter.toUpperCase())} </div>
+            <a href={`http://localhost:3000/user/cart/${props.user_id}`}>My Cart
             </a>
             <button onClick={logout}>Logout</button>
             </div> :

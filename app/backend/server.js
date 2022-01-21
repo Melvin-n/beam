@@ -12,13 +12,20 @@ const {
     addGame,
     getGameList,
     getGame,
+    
+} = require('./controllers/products.js')
+
+const {
     userSignup,
-    userLogin,
+    userLogin
+} = require('./controllers/userAuth.js')
+    
+const {
     addToCart,
     getUserCart,
-    checkout
-} = require('./controllers/controllers.js')
-
+    checkout,
+    deleteFromCart
+}= require('./controllers/cart.js')
 
 //allow cors for localhost3000, set credentials (such as cookies) to be allowed
 const corsOptions = {
@@ -66,7 +73,13 @@ app.post('/add-to-cart', addToCart)
 //return items in users cart
 app.post('/user/cart/:user_id', getUserCart)
 
+//purchase items in cart
 app.post('/checkout', checkout)
+
+//delete items from cart
+app.delete('/delete-cart-item', deleteFromCart)
+
+
 
 app.listen(port, () => {
     console.log(`Server is listening on port ${port}`)
