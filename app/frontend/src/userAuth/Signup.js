@@ -14,13 +14,17 @@ export default function Signup() {
                     name='username'
                     placeholder='Username' 
                     required 
-                    onChange={((e) => setUsername(e.target.value))}/>
+                    onChange={((e) => setUsername(e.target.value))}
+                    value={username}
+                    />
                 <label htmlFor='password'>Password</label>
                 <input type='password' 
                     name='password' 
                     placeholder='Password' 
                     required 
-                    onChange={((e) => setPassword(e.target.value))}/>
+                    onChange={((e) => setPassword(e.target.value))}
+                    value={password}
+                    />
                 <input type='submit' value='Signup' />
             </form>
         </div>

@@ -1,6 +1,6 @@
 //import dependencies and css
 import React from 'react';
-import './after-payment.css'
+import '../css/after-payment.css'
 
 export default function SuccessPayment() {
   return (

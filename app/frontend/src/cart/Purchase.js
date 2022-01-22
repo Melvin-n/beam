@@ -14,7 +14,7 @@ export default function Purchase(props) {
     return (
         <div id='game-purchase-card'>
             <h1>{props.gameData.title}</h1>
-            <h2 id='price-purchase-card'>${props.gameData.price}</h2>
+            <h2 id='price-purchase-card'>${props.gameData.price.toFixed(2)}</h2>
             <button onClick={() => {handleClick(props.gameData.id, props.username)}}>Add to cart</button>
             <button>Add to wishlist</button>
         </div>

@@ -24,33 +24,58 @@
 #carousel-image {
     width: 70vw;
     height: 70vh;
+    box-shadow: 3px 3px 2px black;
+    border-radius: 5px;
+}
+
+
+#hero-container {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4vh;
 }
 
 #sale-hero {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 70vw;
+    border: 5px solid black;
+    border-radius: 10px;
+    box-shadow: 4px 4px 2px black;
+    padding: 5vh;
+}
+
+#sale-hero:hover {
+    box-shadow: 6px 6px 4px black;
+    cursor: pointer;
 }
 
 #hero-header {
     align-self: last baseline;
     width: 70vw;
+    font-size: 2.2em;
+    margin-bottom: 4vh;
+    /* padding-right: 5vh; */
 }
 
 .small-game-image {
     width: 20vw;
     height: 20vw;
     border: 2px solid black;
-    box-shadow: 2px 2px 2px black;
+    box-shadow: 1px 1px 2px black;
     margin-bottom: 5vh;
+    border-radius: 5px;
+    
 }
 
 #games-list {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 10vw;
+    gap: 7vw;
     padding: 8vw;
 }
 
@@ -66,7 +91,32 @@
     font-size: 1.6em;
 }
 
+#games-list a {
+    text-decoration: none;
+    color: black;
+}
+
 #home-link-header {
     text-decoration: none;
     color: white;
+}
+
+
+.game-brief {
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    box-shadow: 2px 2px 2px black;
+}
+
+.game-brief:hover {
+    box-shadow: 4px 4px 2px black;
+}
+
+#login-div {
+
+}
+
+#header-username {
+    
 }

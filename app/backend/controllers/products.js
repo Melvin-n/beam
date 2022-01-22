@@ -4,7 +4,7 @@ const { db } = require("../db/db")
 
 //get a list of all the games with sale set to true
 const saleItems = (req, res) => {
-    const selectQuery = "SELECT title, image, description, price FROM games WHERE sale = ?"
+    const selectQuery = "SELECT title, image, description, price, id FROM games WHERE sale = ?"
     db.query(selectQuery, [true], (err, result) => {
         if (err) {
             console.log(err)
@@ -22,9 +22,9 @@ const addGame = (req, res) => {
     db.query(insertQuery, [req.body.title, req.body.description, req.body.image, req.body.price, req.body.sale], 
         (err, result) => {
             if (err) {
-                res.sendStatus(400)
+                res.send(Status(400))
             } else {
-                res.redirect('http://localhost:4000/api/games')
+                res.redirect('http://localhost:3000/api/addgame')
             }
         }
     )
@@ -57,10 +57,27 @@ const getGame = (req, res) => {
     })
 }
 
+//send games back which match search term
+const searchQuery = (req, res) => {
+
+    const searchTerm = `%${req.body.searchTerm}%`
+    console.log(searchTerm)
+    const selectQuery = `SELECT * FROM games WHERE title LIKE ?`
+
+    db.query(selectQuery, [searchTerm], (err, result) => {
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(result)
+        }
+    })
+
+}
 
 module.exports = { 
     saleItems,
     addGame, 
     getGameList,
-    getGame
+    getGame,
+    searchQuery
 }

@@ -7,19 +7,23 @@ const cors = require('cors')
 const stripe = require('stripe')(process.env.PRIVATE_STRIPE_KEY)
 
 //import controllers
+
+//product controllers
 const {
     saleItems,
     addGame,
     getGameList,
     getGame,
-    
+    searchQuery  
 } = require('./controllers/products.js')
 
+//userauth controllers
 const {
     userSignup,
     userLogin
 } = require('./controllers/userAuth.js')
-    
+
+//cart controllers
 const {
     addToCart,
     getUserCart,
@@ -78,6 +82,9 @@ app.post('/checkout', checkout)
 
 //delete items from cart
 app.delete('/delete-cart-item', deleteFromCart)
+
+//search for games
+app.post('/search', searchQuery)
 
 
 

@@ -3,7 +3,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 
 //import css
-import './homepage.css'
+import '../css/homepage.css'
 
 
 export default function GameList() {
@@ -37,7 +37,7 @@ export default function GameList() {
                 <div className='game-brief'>
                 <img className='small-game-image' src={game.image} alt={game.title} />
                 <h4>{game.title}</h4>
-                <h5>${game.price}</h5>
+                <h5>${game.price.toFixed(2)}</h5>
 
                 </div>
                 </a>

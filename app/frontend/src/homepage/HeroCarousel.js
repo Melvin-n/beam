@@ -37,16 +37,17 @@ export default function HeroCarousel() {
     if (isLoading) {
         return (
             <div id='sale-hero'>
-                <h2 id='hero-header'>Games on sale</h2>
+                <h2 id='hero-header'>Featured Games</h2>
             </div>
         )
     }
      return (
-        <div id='sale-hero'>
-            <h2 id='hero-header'>Games on sale</h2>
-            <img id='carousel-image' src={saleItems[currentHero].image} alt={saleItems[currentHero].title} /> 
-            <h3 id='sale-game-title'>{saleItems[currentHero].title}</h3>
-            
+        <div id='hero-container'>
+            <h2 id='hero-header'>Featured Games</h2>
+            <div id='sale-hero' onClick={() => window.location = `http://localhost:3000/game/${saleItems[currentHero].id}`}>
+                <img id='carousel-image' src={saleItems[currentHero].image} alt={saleItems[currentHero].title} /> 
+                <h3 id='sale-game-title'>{saleItems[currentHero].title}</h3>            
+            </div>
         </div>
     )
 }

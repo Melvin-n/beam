@@ -7,7 +7,7 @@ import Signup from './Signup'
 import Footer from '../sharedComponents/Footer'
 
 //import css
-import './user-auth.css'
+import '../css/user-auth.css'
 
 
 export default function UserAuth() {

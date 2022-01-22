@@ -1,16 +1,13 @@
-import './App.css';
-import Header from './Header';
+import '../css/App.css';
 import HeroCarousel from './HeroCarousel';
-import './homepage.css'
-import GameList from './GameList';
-import Footer from './Footer';
+import '../css/homepage.css'
+import GameList from '../sharedComponents/GameList';
 
 function Homepage() {
   return (
     <div className="App">
         <HeroCarousel />
         <GameList />
-        <Footer />
     </div>
   );
 }

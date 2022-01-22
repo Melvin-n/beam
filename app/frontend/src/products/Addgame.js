@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import './add-game-form.css'
+import '../css/add-game-form.css'
 
-export default function Addgame() {
+export default function Addgame(props) {
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
@@ -9,6 +9,13 @@ export default function Addgame() {
     const [image, setImage] = useState('')
     const [sale, setSale] = useState(0)
 
+    if (props.username !== 'Admin') {
+        return (
+            <div id='access-unauthorized-container'>
+            <h1>Access unauthorized</h1>
+            </div>
+        )
+    }
     return (
         <div>
         {/* input form takes game title, desc, price, image path and sale checkbox */}

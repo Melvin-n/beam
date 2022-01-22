@@ -22,3 +22,7 @@ body {
     width: 50vw;
 
 }
+
+#access-unauthorized-container {
+    height: 80vh;
+}

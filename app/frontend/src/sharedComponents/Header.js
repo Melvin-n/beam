@@ -1,5 +1,9 @@
-import React, { useEffect, useState } from 'react'
-import './homepage.css'
+import React from 'react'
+import '../css/homepage.css'
+import ReactDOM from 'react-dom'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
+import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header(props) {
     
@@ -24,10 +28,11 @@ export default function Header(props) {
             </ul>
             {props.username ?
             <div id='login-div'>
-            <div>Logged in as {props.username.replace(/(^|\s)\S/g, letter => letter.toUpperCase())} </div>
-            <a href={`http://localhost:3000/user/cart/${props.user_id}`}>My Cart
-            </a>
-            <button onClick={logout}>Logout</button>
+                <div id='header-username'>Logged in as {props.username.replace(/(^|\s)\S/g, letter => letter.toUpperCase())} </div>
+                <a href={`http://localhost:3000/user/cart/${props.user_id}`}>
+                <FontAwesomeIcon icon={faShoppingCart} />
+                </a>
+                <button onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} /></button>
             </div> :
             <div id='login-div'>
                 <a href='http://localhost:3000/login-signup' className='login-div-item'>Login | </a>

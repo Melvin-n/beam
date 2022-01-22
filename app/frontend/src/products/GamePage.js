@@ -5,10 +5,10 @@ import axios from 'axios'
 
 //import components
 import GameDetails from './GameDetails.js'
-import Purchase from './Purchase.js.js'
+import Purchase from '../cart/Purchase.js'
 
 //import css
-import './game-page.css'
+import '../css/game-page.css'
 
 
 export default function GamePage(props) {
@@ -19,17 +19,16 @@ export default function GamePage(props) {
     const [gameData, setGameData] = useState()
     const [loaded, setLoaded] = useState(false)
 
-    //sends a request to backend for data on game by {id} as defined in route (in App) and linked by game-brief div (in Gamelist)       
+    //sends a request to backend for data on game by {id}        
     useEffect(() => {
         axios.get(`http://localhost:4000/game/${id}`)
         .then(res => {
             setGameData(res.data[0])
-            console.log(res.data[0])
             setLoaded(true)
         })
     }, [])
 
-    //check for data to be loaded before rendering componenets which require data
+    //check for data to be loaded before rendering componnets which require data
     if (!loaded) {
         return (
             ''
