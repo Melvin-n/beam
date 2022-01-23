@@ -30,7 +30,7 @@ export default function HeroCarousel() {
             setCurrentHero(currentHero + 1)
         }
         
-    }, 2500)
+    }, 3000)
 
     
 
@@ -44,9 +44,15 @@ export default function HeroCarousel() {
      return (
         <div id='hero-container'>
             <h2 id='hero-header'>Featured Games</h2>
-            <div id='sale-hero' onClick={() => window.location = `http://localhost:3000/game/${saleItems[currentHero].id}`}>
+            <div id='sale-hero' >
                 <img id='carousel-image' src={saleItems[currentHero].image} alt={saleItems[currentHero].title} /> 
-                <h3 id='sale-game-title'>{saleItems[currentHero].title}</h3>            
+                <div id='hero-details'>
+                    <h3 id='hero-game-title'>{saleItems[currentHero].title}</h3>
+                    <button id='hero-game-btn'
+                        onClick={() => window.location = `http://localhost:3000/game/${saleItems[currentHero].id}`}>
+                        Out Now
+                    </button>  
+                </div>     
             </div>
         </div>
     )

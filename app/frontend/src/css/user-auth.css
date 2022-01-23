@@ -9,7 +9,7 @@
     width: 40%;
 }
 
-input {
+.login-signup-form input {
     margin-bottom: 5vh;
     background-color: rgb(43, 49, 54);
     color: white;

@@ -27,15 +27,18 @@
 
 .cart-button {
     outline: none;
-    background-color: white;
-    border: 4px solid black;
+    background-color: firebrick;
     padding: 2vh;
-    font-size: 20px;
+    font-size: 16px;
     font-weight: 600;
     margin: 8vh 3vw 0 3vw;
     cursor: pointer;
+    color: white;
+    border: none;
+    width: 15vw;
+    height: 8vh;
 }
 
 .cart-button:hover {
-    background-color: rgb(138, 138, 138);
+    background-color: rgb(204, 37, 37);
 }

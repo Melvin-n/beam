@@ -32,7 +32,7 @@ export default function Login() {
 
 
     return (
-        <div id='login-card'>
+        <div className='login-signup-form' id='login-card'>
             <h1 className='login-signup-title'>Login</h1>
             <form className='auth-form' onSubmit={handleSubmit}>
                 <label for='username'>Username</label>

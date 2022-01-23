@@ -1,8 +1,6 @@
 import React from 'react'
 import '../css/homepage.css'
-import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faShoppingCart } from '@fortawesome/free-solid-svg-icons'
 import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 
 export default function Header(props) {
@@ -14,28 +12,39 @@ export default function Header(props) {
         window.location = 'http://localhost:3000/'
         props.username = ''
     }
+
     
     return (
         
         <div id='header-container'>
             <a id='home-link-header' href='http://localhost:3000/'>
-                <h1>Beam</h1>
+                <h1 id='beam-title'>Beam</h1>
             </a>
             <ul id='nav-list'>
-                <li className='nav-list-item'>Store</li>
-                <li className='nav-list-item'>Forums</li>
-                <li className='nav-list-item'>About</li>
+                <li className='nav-list-item'>
+                    <a href={'http://localhost:3000/browse-games'}>
+                    Browse
+                    </a>
+                </li>           
+                <li className='nav-list-item'>
+                    <a href={`http://localhost:3000/user/cart/${props.user_id}`}>
+                    View Cart
+                    </a>
+                </li>
+                
             </ul>
             {props.username ?
-            <div id='login-div'>
-                <div id='header-username'>Logged in as {props.username.replace(/(^|\s)\S/g, letter => letter.toUpperCase())} </div>
-                <a href={`http://localhost:3000/user/cart/${props.user_id}`}>
-                <FontAwesomeIcon icon={faShoppingCart} />
-                </a>
-                <button onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} /></button>
+            <div id='logged-in-container-header'>
+                <div id='header-username' >
+                    {props.username.replace(/(^|\s)\S/g, letter => letter.toUpperCase())} 
+                </div>
+                <button id='logout-btn-header'
+                    onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} />
+                </button>
+
             </div> :
-            <div id='login-div'>
-                <a href='http://localhost:3000/login-signup' className='login-div-item'>Login | </a>
+            <div id='logged-out-container-header'>
+                <a href='http://localhost:3000/login-signup' className='login-div-item'>Login  |  </a>
                 <a href='http://localhost:3000/login-signup' className='login-div-item'>Sign up</a>
             </div>
             }

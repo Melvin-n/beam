@@ -14,11 +14,18 @@ const addToCart = (req, res) => {
     db.query('SELECT id FROM users WHERE name = ?', [username], (err, result) => {
         if (err) throw err
         user_id = result[0].id
-        
-        const insertQuery = 'INSERT INTO cart (user_id, game_id) VALUES (?, ?)'
-        db.query(insertQuery, [user_id, game_id], (err, result) => {
-            if (err) throw err
-            res.send('Added to cart')
+        //check if item is already in cart, if not then add
+        db.query('SELECT COUNT(game_id) as amountInCart FROM cart WHERE game_id = ? AND user_id = ?',
+            [game_id, user_id], (err, result) => {
+            if (result[0].amountInCart) {
+                res.send({inCart: true})
+            } else {
+                const insertQuery = 'INSERT INTO cart (user_id, game_id) VALUES (?, ?)'
+                db.query(insertQuery, [user_id, game_id], (err, result) => {
+                    if (err) throw err
+                    res.send({inCart: false})
+                })              
+            }
         })
     })
 }

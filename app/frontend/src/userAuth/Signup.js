@@ -6,7 +6,7 @@ export default function Signup() {
     const [password, setPassword] = useState('')    
 
     return (
-        <div id='signup-card'>
+        <div className='login-signup-form' id='signup-card'>
             <h1 className='login-signup-title'>Signup</h1>
             <form className='auth-form' method='POST'  action='http://localhost:4000/signup'>
                 <label htmlFor='username'>Username</label>

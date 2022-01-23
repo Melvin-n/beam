@@ -30,9 +30,9 @@ const addGame = (req, res) => {
     )
 }
 
-//get a list of all the games in the database
+//get a list of some games (6) the database to display on home screen
 const getGameList = (req, res) => {
-    const selectQuery = "SELECT * FROM games"
+    const selectQuery = "SELECT * FROM games ORDER BY title LIMIT 6"
     db.query(selectQuery, (err, result) => {
         if (err) {
             res.sendStatus(404)
@@ -68,7 +68,7 @@ const searchQuery = (req, res) => {
         if (err) {
             console.log(err)
         } else {
-            console.log(result)
+            res.send(result)
         }
     })
 
