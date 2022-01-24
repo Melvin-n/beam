@@ -7,10 +7,10 @@ export default function Signup() {
 
     return (
         <div className='login-signup-form' id='signup-card'>
-            <h1 className='login-signup-title'>Signup</h1>
             <form className='auth-form' method='POST'  action='http://localhost:4000/signup'>
                 <label htmlFor='username'>Username</label>
-                <input type='text'
+                <input className='input-text-form'
+                    type='text'
                     name='username'
                     placeholder='Username' 
                     required 
@@ -18,14 +18,15 @@ export default function Signup() {
                     value={username}
                     />
                 <label htmlFor='password'>Password</label>
-                <input type='password' 
+                <input className='input-text-form'
+                    type='password' 
                     name='password' 
                     placeholder='Password' 
                     required 
                     onChange={((e) => setPassword(e.target.value))}
                     value={password}
                     />
-                <input type='submit' value='Signup' />
+                <input className='submit-user-auth' type='submit' value='Signup' />
             </form>
         </div>
     )

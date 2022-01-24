@@ -24,22 +24,20 @@ export default function App() {
     const [decodedUsername, setDecodedUsername] = useState()
     const [decodedUserID, setDecodedUserID] = useState()
 
-    //decodes JWT, saves id and username to variables
+    //decodes JWT, saves id and username 
     useEffect(() => {
-        if (decodedUsername === undefined || decodedUserID === undefined) {
             const cookie = document.cookie
+            console.log(document.cookie)
             if (cookie.includes('accessToken')) {
                 const parts = cookie.split(';')
-                console.log(parts)
                 const token = parts.filter(part => part.includes('accessToken'))
                 const encodedtokenUsername = token[0].split('.')[1]
-                console.log( token[0].split('.'))
                 setDecodedUsername(base64.decode(encodedtokenUsername).split('"')[3])
                 setDecodedUserID(base64.decode(encodedtokenUsername).split('"')[6].split('')[1])
-            } else {
-                setDecodedUsername('')
-                setDecodedUserID('')
-            }
+            
+        } else {
+            setDecodedUserID('')
+            setDecodedUsername('')
         }
        
         

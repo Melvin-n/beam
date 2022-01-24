@@ -19,11 +19,6 @@
     padding: 0;
 }
 
-/* #beam-title {
-    text-decoration: underline;
-    text-decoration-color: firebrick;
-} */
-
 
 .nav-list-item {
     padding:0;
@@ -34,7 +29,7 @@
 .nav-list-item a {
     text-decoration: none;
     color: white;
-    font-size: 3vh;
+    font-size: 1.7vw;
     margin: 0;
     padding: 0;
 }
@@ -176,8 +171,11 @@
     cursor: pointer;
     background-color:rgb(204, 37, 37)
 }
-.game-brief-price {
 
+.login-signup-header {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5vw;
 }
 
 #logged-in-container-header {
@@ -185,8 +183,12 @@
     width: 10vw;
     flex-direction: row;
     gap: 0.5vw;
-    justify-self: end;
-    
+    justify-self: end; 
+}
+
+#beam-title {
+    font-size: 3vw;
+    margin: 1.5vh 0;
 }
 
 #logout-btn-header {

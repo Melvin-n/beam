@@ -8,9 +8,8 @@ export default function Header(props) {
 
     //logout function, deletes JWT cookie
     const logout = () => {
-        document.cookie = "accessToken=;expires=" + new Date(0).toUTCString()
-        window.location = 'http://localhost:3000/'
-        props.username = ''
+        document.cookie = `accessToken=; Path=/; expires=${new Date(0).toUTCString()}` 
+        window.location.assign('http://localhost:3000/')
     }
 
     
@@ -44,8 +43,8 @@ export default function Header(props) {
 
             </div> :
             <div id='logged-out-container-header'>
-                <a href='http://localhost:3000/login-signup' className='login-div-item'>Login  |  </a>
-                <a href='http://localhost:3000/login-signup' className='login-div-item'>Sign up</a>
+                <a href='http://localhost:3000/login-signup' className='login-signup-header'>Login / Signup </a>
+
             </div>
             }
             

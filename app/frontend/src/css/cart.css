@@ -8,6 +8,7 @@
 #cart-table {
     width: 58vw;
     text-align: left;
+    font-weight: 700;
     
 }
 
@@ -23,14 +24,14 @@
 #cart-table #total-row {
     padding: 1.5vw;
     font-size: larger;
+    font-weight: 800;
 }
 
 .cart-button {
     outline: none;
     background-color: firebrick;
     padding: 2vh;
-    font-size: 16px;
-    font-weight: 600;
+    font-size: 1.4vw;
     margin: 8vh 3vw 0 3vw;
     cursor: pointer;
     color: white;
@@ -41,4 +42,14 @@
 
 .cart-button:hover {
     background-color: rgb(204, 37, 37);
+}
+
+#remove-cart-btn {
+    border: 1.2px solid black;
+    border-radius: 50px;
+    background-color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:700;
+    cursor: pointer;
+    
 }

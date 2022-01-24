@@ -69,7 +69,6 @@ const userLogin = (req, res) => {
     })
 }
 
-
 module.exports = { 
     userSignup,
     userLogin

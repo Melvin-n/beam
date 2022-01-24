@@ -1,26 +1,56 @@
-body {
+#add-game-form-container{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width: 100vw;
-    height: 100vh
+    height: 100vh;
+    gap: 0.5vh;
 }
 
 #add-game-form {
     display: flex;
     flex-direction: column;
     border: 2px solid black;
-    width: 60vw;
+    margin-top: 5vh;;
+    width: 60%;
+    height: 60%;
+    padding: 1vw;
 }
 #add-game-form textarea{
     height: 20vh;
     text-align: justify;
 }
 
+#add-game-submit {
+    background-color: firebrick;
+    color: white;
+    border: none;
+    width: 20vw;
+    height: 5vh;
+    align-self: center;
+}
 
-#add-game-input {
-    width: 50vw;
+#add-game-submit:hover {
+    background-color: rgb(204, 37, 37);
+    cursor: pointer;
+}
 
+#add-game-form-title {
+    margin-bottom: 0;
+}
+
+#add-game-form textarea {
+    resize: none;
+    width: 98%;
+}
+
+.add-game-input {
+    width: 98%;
+}
+
+#add-game-checkbox {
+    justify-self: flex-start;
+    width: 1vw;
 }
 
 #access-unauthorized-container {

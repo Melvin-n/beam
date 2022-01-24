@@ -3,19 +3,13 @@
     flex-direction: column;
     align-items: center;
     padding: 4vh;
-    border: 2px solid white;
-    color: white;
-    background-color: slategrey;
+    border: 2px solid black;
+    color: black;
+    background-color: white;
     width: 40%;
+    height: 40vh;
 }
 
-.login-signup-form input {
-    margin-bottom: 5vh;
-    background-color: rgb(43, 49, 54);
-    color: white;
-    border-radius: 5px;
-    
-}
 
 #login-card, #signup-card {
     display: flex;
@@ -26,27 +20,44 @@
 
 #auth-background {
     width: 100vw;
-    height: 100vh;
-    background-color: black;
+    height: 77vh;
+    background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-#login-or-signup button {
-    border: 2px solid white;
-    background: none;
-    color: white;
-    font-size: 1.5em;
-    margin: 3vh 3vw;
-}
-
-#login-or-signup button:hover {
+.login-signup-selection {
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
     cursor: pointer;
+    margin-top: 4vh;
 }
 
 .login-signup-title {
+    color: black;
+}
+
+.submit-user-auth {
+    background-color: firebrick;
+    width: 20vw;
+    height: 7vh;
     color: white;
+    border: none;
+    font-size: 2vw;
+    margin-top: 10vh;
+    cursor: pointer;
+}
+
+.submit-user-auth:hover {
+    background-color: rgb(204, 37, 37);
+}
+
+.input-text-form {
+    width: 15vw;
+    height: 3.5vh;
+    font-size: 1.25vw;
 }
 
 

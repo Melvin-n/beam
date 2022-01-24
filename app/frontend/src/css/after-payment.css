@@ -6,12 +6,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    height: 77vh;
 }
 
 .after-payment-redirect {
-    font-size: 7vh;
-    border: 4px solid black;
+    font-size: 2vw;
     text-decoration: none;
-    
+    background-color: firebrick;
+    color: white;
+    width: 20vw;
+    height: 5vh;
+    padding: 1vh;
+    text-align: center;  
+}
+
+.after-payment-redirect:hover {
+    background-color: rgb(204, 37, 37);
 }

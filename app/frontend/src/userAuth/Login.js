@@ -33,23 +33,24 @@ export default function Login() {
 
     return (
         <div className='login-signup-form' id='login-card'>
-            <h1 className='login-signup-title'>Login</h1>
             <form className='auth-form' onSubmit={handleSubmit}>
                 <label for='username'>Username</label>
-                <input type='text'
+                <input className='input-text-form'
+                    type='text'
                     name='username'
                     placeholder='Username' 
                     required 
                     value={username}
                     onChange={((e) => setUsername(e.target.value))}/>
                 <label for='password'>Password</label>
-                <input type='password' 
+                <input className='input-text-form'
+                    type='password' 
                     name='password' 
                     placeholder='Password' 
                     required
                     value={password}
                     onChange={((e) => setPassword(e.target.value))}/>
-                <input type='submit' value='Login' />
+                <input className='submit-user-auth' type='submit' value='Login' />
             </form>
 
         </div>

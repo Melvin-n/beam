@@ -32,9 +32,9 @@ export default function GameList() {
     return (
         <div id='games-list'>
             {/* for each game create href that redirects to game details page with id as param */}
-            {games.map((game) => (
-                <a href={`http://localhost:3000/game/${game.id}`}>
-                    <div className='game-brief'>
+            {games.map((game, i) => (
+                <a key={i} href={`http://localhost:3000/game/${game.id}`}>
+                    <div className='game-brief' >
                         <img className='small-game-image' src={game.image} alt={game.title} />
                         <h4 className='game-brief-title'>{game.title}</h4>
                         <h5 className='game-brief-price'>${game.price.toFixed(2)}</h5>

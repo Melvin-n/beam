@@ -7,14 +7,18 @@ export default function Purchase(props) {
 
     //Adds an item to the users cart
     const handleClick = (game_id, username) => {
-        axios.post('http://localhost:4000/add-to-cart', {game_id: game_id, username: username})
-        .then(res => {
-            if (res.data.inCart) {
-                alert('Item already in cart!')
-            } else {
-                alert('Added to cart!')
-            }
-        })
+        if (!username) {
+            alert('Please log in to use cart.')
+        } else {
+            axios.post('http://localhost:4000/add-to-cart', {game_id: game_id, username: username})
+            .then(res => {
+                if (res.data.inCart) {
+                    alert('Item already in cart!')
+                } else {
+                    alert('Added to cart!')
+                }
+            })
+        }
     }
 
     return (

@@ -11,8 +11,7 @@ export default function Cart(props) {
     
     //display the customers cart items and prices, also calculate and show total price
     useEffect(() => {
-        if (props.user_id) {
-        }
+        
         axios.post(`http://localhost:4000/user/cart/${props.user_id}`)
         .then(res => res.data.map(game => (
             setGamesInCartPrice(gamesInCartPrice =>[...gamesInCartPrice, [game['title'], game['price']]]),
@@ -24,7 +23,8 @@ export default function Cart(props) {
     //redirect customer to checkout
     const checkout = () => {
         axios.post('http://localhost:4000/checkout', {
-            gamesInCartPrice
+            gamesInCartPrice,
+            user_id: props.user_id
         })
         .then(res => window.location = res.data.url)
         .catch(e => console.log(e.error))
@@ -45,7 +45,7 @@ export default function Cart(props) {
     }   
 
     if (!loaded) {
-        return ('')
+        return (<h1>Log in to view your cart.</h1>)
     }
     else {
         return (
@@ -59,8 +59,8 @@ export default function Cart(props) {
                 {gamesInCartPrice.map(game => (
                     <tr>
                     <td>{game[0]}</td>  
-                    <td>${game[1]}</td> 
-                    <button onClick={() => deleteItem(game[0])}>Delete</button>
+                    <td>${game[1].toFixed(2)}</td> 
+                    <td><button id='remove-cart-btn' onClick={() => deleteItem(game[0])}>X</button></td>
                     </tr>
                 ))}
                 <tr id='total-row'>

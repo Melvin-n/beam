@@ -43,10 +43,9 @@ const getUserCart = (req, res) => {
 
 //send url for purchasing cart items
 const checkout = async (req, res) => {
-    const { gamesInCartPrice } = req.body   
-    console.log(gamesInCartPrice)
+    const { gamesInCartPrice, user_id } = req.body   
+
     try {
-        console.log('try')
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
             mode: 'payment',
@@ -64,6 +63,13 @@ const checkout = async (req, res) => {
             }),
             success_url: 'http://localhost:3000/payment-success',
             cancel_url: 'http://localhost:3000/payment-cancel'
+        })
+        db.query(`DELETE FROM cart WHERE user_id = ${user_id}`, (err, result) => {
+            if (err) {
+                console.log(err)
+            } else {
+                console.log(result)
+            }
         })
         res.json(({url: session.url}))
     }
@@ -86,9 +92,9 @@ const deleteFromCart = (req, res) => {
             if (err) throw err 
             res.json({affectedRows: result.affectedRows})
         })
-    })
-    
+    }) 
 }
+
 
 
 module.exports = { 
