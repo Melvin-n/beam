@@ -50,7 +50,6 @@ const userLogin = (req, res) => {
                     console.log(err)
                 } else {
                     if (result) {
-                        console.log('logged in')
                         //JWT authentication
                         const accessToken = jwt.sign({
                             username: username,

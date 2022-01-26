@@ -8,6 +8,8 @@
     color: white;
     border-bottom: 0.5px solid white;
     align-items: center;
+    font-family: 'Montserrat', sans-serif;
+
 }
 
 #nav-list {
@@ -15,7 +17,6 @@
     flex-direction: row;
     list-style: none;
     gap: 8vw;
-    /* margin: 3vh 0 0 0; */
     padding: 0;
 }
 
@@ -143,6 +144,7 @@
     display: flex;
     flex-direction: column;
     background-color: rgb(240, 239, 239);
+    cursor: pointer;
 }
 
 .game-brief:hover {
@@ -207,6 +209,79 @@
     font-size: 2vw;
 }
 
-#hlogged-out-container-header {
-    
+
+@media screen and (max-width: 799px) {
+    #hero-header  {
+        display: none;
+    }
+
+    #carousel-image {
+        width: 100vw;
+        height: 40vh;
+    }
+
+    #hero-game-title {
+        font-size: 3vh;
+        
+    }
+
+    #hero-game-btn {
+        background-color: firebrick;
+        color: white;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        width: 30vw;
+        height: 10vh;
+        margin-top: 3vh;
+        font-size: 3vh;
+    }
+
+    #hero-container {
+        height: 65vh;
+    }
+
+    .game-brief {
+        overflow-wrap: break-word;
+        border: 1px solid rgb(240, 239, 239);
+        padding: 8px;
+        color: black;
+        width: 80vw;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(240, 239, 239);
+    }
+
+    .nav-list-item a {
+        text-decoration: none;
+        color: white;
+        font-size: 2.5vw;
+        margin: 0;
+        padding: 0;
+    }
+
+    #header-username {
+        font-size: 3vw;
+    }
+
+    #logout-btn-header {
+        font-size: 3vw;
+    } 
+
+    .login-signup-header {
+        text-decoration: none;
+        color: white;
+        font-size: 2vw;
+    }
+}
+
+
+@media screen and (max-width: 999px) and (min-width: 800px) {
+
+    .game-brief {
+       width: 18vw;
+       height: 40vh;
+   }
+   
 }

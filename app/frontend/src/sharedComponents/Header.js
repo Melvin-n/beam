@@ -6,12 +6,7 @@ import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons'
 export default function Header(props) {
     
 
-    //logout function, deletes JWT cookie
-    const logout = () => {
-        document.cookie = `accessToken=; Path=/; expires=${new Date(0).toUTCString()}` 
-        window.location.assign('http://localhost:3000/')
-    }
-
+    
     
     return (
         
@@ -32,21 +27,21 @@ export default function Header(props) {
                 </li>
                 
             </ul>
-            {props.username ?
+            {/* {props.username ?
             <div id='logged-in-container-header'>
                 <div id='header-username' >
-                    {props.username.replace(/(^|\s)\S/g, letter => letter.toUpperCase())} 
+                    User 
                 </div>
                 <button id='logout-btn-header'
                     onClick={logout}><FontAwesomeIcon icon={faSignOutAlt} />
                 </button>
 
-            </div> :
+            </div> : */}
             <div id='logged-out-container-header'>
                 <a href='http://localhost:3000/login-signup' className='login-signup-header'>Login / Signup </a>
 
             </div>
-            }
+            
             
         </div>
     )

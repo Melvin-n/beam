@@ -36,6 +36,7 @@
 }
 
 
+
 #search-container {
     display: flex;
     flex-direction: column;
@@ -61,4 +62,24 @@
 
 .purchase-page-btn:hover {
     background-color: rgb(204, 37, 37);
+}
+
+@media only screen and (max-width: 600px) {
+    #game-details-image {
+	    width: 80vw;
+	    height: 50vw;
+	}
+	#game-description-paragraph {
+	    width: 80vw;
+	}
+	#game-page-main {
+	    flex-direction: column;
+	}
+
+    .purchase-page-btn {
+	    width: 35vw;
+	    height: 8vh;
+	    font-size: 3vh;
+
+}
 }

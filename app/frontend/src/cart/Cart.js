@@ -71,7 +71,7 @@ export default function Cart(props) {
             <div id='cart-page-buttons'>
                 <button className='cart-button' id='cart-checkout' onClick={checkout}>Checkout</button>
                 <button className='cart-button' id='cart-continue-shopping'
-                 onClick={() => window.location = 'http://localhost:3000/'}>Continue shopping
+                 onClick={() => window.location = 'http://localhost:3000/browse-games'}>Keep shopping
                  </button>
             </div>
         </div>

@@ -1,12 +1,12 @@
 .after-payment-title {
-    font-size: 15vh;
+    font-size: 6vw;
 }
 
 .after-payment {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 77vh;
+    height: 80vh;
 }
 
 .after-payment-redirect {
@@ -22,4 +22,17 @@
 
 .after-payment-redirect:hover {
     background-color: rgb(204, 37, 37);
+}
+
+@media only screen and (max-width: 600px) {
+    .after-payment-redirect {
+        font-size: 4vw;
+        text-decoration: none;
+        background-color: firebrick;
+        color: white;
+        width: 20vw;
+        height: 5vh;
+        padding: 1vh;
+        text-align: center;  
+    }
 }

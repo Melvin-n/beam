@@ -4,7 +4,6 @@ import React, { useState } from 'react'
 //import components
 import Login from './Login'
 import Signup from './Signup'
-import Footer from '../sharedComponents/Footer'
 
 //import css
 import '../css/user-auth.css'
