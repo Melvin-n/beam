@@ -2,7 +2,7 @@
 
 This project is an ecommerce site made using React, Nodejs, Express and MySQL.
 
-Homepage demo - https://beam-demo.netlify.app/ (only the homepage, no server or database connected)
+Homepage demo - https://beam-demo.netlify.app/ (only the homepage, no backend connected)
 
 
 ## Description:
